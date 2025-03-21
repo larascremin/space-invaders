@@ -15,11 +15,11 @@ class Player {
   }
 
   moveLeft() {
-    player.position.x -= this.velocity;
+    this.position.x -= this.velocity;
   }
 
   moveRight() {
-    player.position.x += this.velocity;
+    this.position.x += this.velocity;
   }
 }
 

@@ -17,10 +17,10 @@ const gameLoop = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   if (keys.left && player.position.x >= 0) {
-    player.moveLeft;
+    player.moveLeft();
   }
   if (keys.right && player.position.x <= canvas.width - 100) {
-    player.moveRight;
+    player.moveRight();
   }
 
   player.draw(ctx);
