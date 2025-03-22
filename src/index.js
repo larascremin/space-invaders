@@ -6,6 +6,8 @@ const ctx = canvas.getContext("2d");
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
+ctx.imageSmoothingEnabled = false;
+
 const player = new Player(canvas.width, canvas.height);
 
 const keys = {
