@@ -18,14 +18,30 @@ const keys = {
 const gameLoop = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  ctx.save();
+  ctx.translate(
+    player.position.x + player.width / 2,
+    player.position.y + player.height / 2
+  );
+
   if (keys.left && player.position.x >= 0) {
     player.moveLeft();
+    ctx.rotate(-0.15);
   }
   if (keys.right && player.position.x <= canvas.width - 100) {
     player.moveRight();
+    ctx.rotate(0.15);
   }
 
+  ctx.translate(
+    -player.position.x - player.width / 2,
+    -player.position.y - player.height / 2
+  );
+
   player.draw(ctx);
+
+  ctx.restore();
+
   requestAnimationFrame(gameLoop);
 };
 

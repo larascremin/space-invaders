@@ -1,4 +1,5 @@
 import {
+  INITIAL_FRAME,
   PATH_ENGINE_IMG,
   PATH_SPACESHIP_IMG,
   PATH_SPRITES_IMG,
@@ -19,7 +20,7 @@ class Player {
     this.spriteImage = this.getImage(PATH_SPRITES_IMG);
 
     this.sx = 0;
-    this.framesCounter = 10;
+    this.framesCounter = INITIAL_FRAME;
   }
 
   getImage(path) {
@@ -61,11 +62,12 @@ class Player {
   }
 
   updateSx() {
-    if (this.sx === 96) {
-      this.sx = 0;
-    } else {
-      this.sx += 48;
+    if (this.framesCounter === 0) {
+      this.sx = this.sx === 96 ? 0 : this.sx + 48;
+      this.framesCounter = INITIAL_FRAME;
     }
+
+    this.framesCounter--;
   }
 
   moveLeft() {
