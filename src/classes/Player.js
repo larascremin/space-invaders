@@ -4,6 +4,7 @@ import {
   PATH_SPACESHIP_IMG,
   PATH_SPRITES_IMG,
 } from "../utils/constants.js";
+import Projectile from "./Projectile.js";
 
 class Player {
   constructor(canvasWidth, canvasHeight) {
@@ -68,6 +69,18 @@ class Player {
     }
 
     this.framesCounter--;
+  }
+
+  shoot(projectiles) {
+    const p = new Projectile(
+      {
+        x: this.position.x + this.width / 2 - 1,
+        y: this.position.y + 3,
+      },
+      -10
+    );
+
+    projectiles.push(p);
   }
 
   moveLeft() {
