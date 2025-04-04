@@ -4,7 +4,9 @@ class Grid {
   constructor(rows, colums) {
     this.rows = rows;
     this.colums = colums;
-    this.invadersVelocity = 1;
+    this.direction = "right";
+    this.moveDown = false;
+    this.invadersVelocity = 10;
     this.invadersGrid = this.init();
   }
 
@@ -15,8 +17,8 @@ class Grid {
       for (let col = 0; col < this.colums; col += 1) {
         const invader = new Invader(
           {
-            x: col,
-            y: row,
+            x: col * 50 + 40,
+            y: row * 36 + 40,
           },
           this.invadersVelocity
         );
@@ -24,6 +26,46 @@ class Grid {
       }
     }
     return invaders;
+  }
+
+  draw(ctx) {
+    this.invadersGrid.forEach((invader) => invader.draw(ctx));
+  }
+
+  update() {
+    if (this.reachedRightBorder()) {
+      this.direction = "left";
+      this.moveDown = true;
+    } else if (this.reachedLeftBorder()) {
+      this.direction = "right";
+      this.moveDown = true;
+    }
+
+    this.invadersGrid.forEach((invader) => {
+      if (this.moveDown) {
+        invader.moveDown();
+        invader.incrementVelocity(0.2);
+        this.invadersVelocity = invader.velocity;
+      }
+      if (this.direction === "right") invader.moveRight();
+      if (this.direction === "left") invader.moveLeft();
+    });
+    this.moveDown = false;
+  }
+
+  reachedRightBorder() {
+    return this.invadersGrid.some(
+      (invader) => invader.position.x + invader.width >= window.innerWidth
+    );
+  }
+
+  reachedLeftBorder() {
+    return this.invadersGrid.some((invader) => invader.position.x <= 0);
+  }
+
+  getRandominvader() {
+    const index = Math.floor(Math.random() * this.invadersGrid.length);
+    return this.invadersGrid[index];
   }
 }
 

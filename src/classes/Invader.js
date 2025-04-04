@@ -6,7 +6,7 @@ class Invader {
     this.position = position;
     this.width = 50 * 0.8;
     this.height = 37 * 0.8;
-    this.velocity = 8;
+    this.velocity = 2;
 
     this.image = this.getImage(PATH_INVADER_IMG);
   }
@@ -31,7 +31,7 @@ class Invader {
     const p = new Projectile(
       {
         x: this.position.x + this.width / 2 - 1,
-        y: this.position.y + 3,
+        y: this.position.y + this.height,
       },
       10
     );
@@ -45,6 +45,14 @@ class Invader {
 
   moveRight() {
     this.position.x += this.velocity;
+  }
+
+  moveDown() {
+    this.position.y += this.height;
+  }
+
+  incrementVelocity(boost) {
+    this.velocity += boost;
   }
 }
 
