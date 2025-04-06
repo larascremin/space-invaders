@@ -18,7 +18,7 @@ class Grid {
         const invader = new Invader(
           {
             x: col * 50 + 40,
-            y: row * 36 + 40,
+            y: row * 36 + 120,
           },
           this.invadersVelocity
         );
@@ -46,7 +46,7 @@ class Grid {
     this.invadersGrid.forEach((invader) => {
       if (this.moveDown) {
         invader.moveDown();
-        invader.incrementVelocity(0.2);
+        invader.incrementVelocity(1);
         this.invadersVelocity = invader.velocity;
       }
       if (this.direction === "right") invader.moveRight();
