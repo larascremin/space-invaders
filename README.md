@@ -5,12 +5,16 @@ concepts of game development, including collision detection, object movement, an
 
 Click here to play -> https://space-invaders-ls.vercel.app/
 
+- Press A to move left;
+- Press D to move right;
+- Press Enter to shoot;
+
 ##
 
 ### Features
 
 - Creation of dynamic explosion animation using the draw() method and Math.random() as parameters;
-- Animation using a single PNG, through constant updates of the drawImage() method, capturing different positions;
+- Animation using a single PNG, through constant updates of the drawImage() method;
 - Sound Effects and progression control in the game using score, level, and highest score;
 
 ##
