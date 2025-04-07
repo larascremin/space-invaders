@@ -7,7 +7,7 @@ Click here to play -> https://space-invaders-ls.vercel.app/
 
 - Press A to move left;
 - Press D to move right;
-- Press Enter to shoot;
+- Press Expace to shoot;
 
 ##
 
