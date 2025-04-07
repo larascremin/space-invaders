@@ -309,7 +309,7 @@ addEventListener("keyup", (event) => {
 
   if (key === "a") keys.left = false;
   if (key === "d") keys.right = false;
-  if (key === "enter") {
+  if (key === " ") {
     keys.shoot.pressed = false;
     keys.shoot.released = true;
   }
