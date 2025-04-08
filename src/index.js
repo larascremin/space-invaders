@@ -49,7 +49,7 @@ const obstacles = [];
 
 const initObstacles = () => {
   const x = canvas.width / 2 - 50;
-  const y = canvas.height / 2 + 250;
+  const y = canvas.height / 2 + 100;
   const offset = canvas.width * 0.15;
   const color = "crimson";
 
