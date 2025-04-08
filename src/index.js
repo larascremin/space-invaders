@@ -301,7 +301,7 @@ addEventListener("keydown", (event) => {
 
   if (key === "a") keys.left = true;
   if (key === "d") keys.right = true;
-  if (key === "enter") keys.shoot.pressed = true;
+  if (key === " ") keys.shoot.pressed = true;
 });
 
 addEventListener("keyup", (event) => {
@@ -309,7 +309,7 @@ addEventListener("keyup", (event) => {
 
   if (key === "a") keys.left = false;
   if (key === "d") keys.right = false;
-  if (key === "enter") {
+  if (key === " ") {
     keys.shoot.pressed = false;
     keys.shoot.released = true;
   }
