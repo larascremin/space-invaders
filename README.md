@@ -1,13 +1,13 @@
 ### 🚀 SPACE-INVADERS
 
-This is a simple version of the classic game. Tt was built using HTML5 Canvas and showcases fundamental <br/>
+This is a simple version of the classic game. It was built using HTML5 Canvas and showcases fundamental <br/>
 concepts of game development, including collision detection, object movement, and interactive controls. <br/>
 
 Click here to play -> https://space-invaders-ls.vercel.app/
 
 - Press A to move left;
 - Press D to move right;
-- Press Expace to shoot;
+- Press Espace to shoot;
 
 ##
 
